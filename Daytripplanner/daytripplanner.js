@@ -12,18 +12,6 @@ function randomGeneratorFromList(array){
     let result = array[Math.floor(Math.random() * array.length)];
     return result;
 }
+let destination = randomGeneratorFromList(destiantionList);
 
-function verifyChoice(array){
-
-    let choiceAccepted = false;
-    while(choiceAccepted === false){
-        let choice = randomGeneratorFromList(array);
-        let confirmation = confirm(`Your choice is ${choice}! Do you accept this?`);
-        if(confirmation){
-            alert(`Congratulations! You have accepted ${choice}`);
-            return choice;
-        }
-    }
-}
-let destination = verifyChoice(destiantionList);
 
