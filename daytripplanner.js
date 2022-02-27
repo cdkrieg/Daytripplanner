@@ -13,11 +13,12 @@ function randomGeneratorFromList(array){
     return result;
 }
 
-function verifyChoice(array, category){
+function verifyChoice(array){
 
     let choiceAccepted = false;
     while(choiceAccepted === false){
         let choice = randomGeneratorFromList(array);
+
         let confirmation = confirm(`Your choice for ${category} is ${choice}! Do you accept this?`);
         if(confirmation){
             alert(`Congratulations! You have accepted the ${category} of ${choice}`);
@@ -43,4 +44,5 @@ let transportation = verifyChoice(transportationList, "Transportation");
 let entertainment = verifyChoice(entertainmentList, "Entertainment");
 
 tripConfirmation(destination,restaurant, transportation, entertainment);
+
 
