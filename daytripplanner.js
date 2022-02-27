@@ -26,4 +26,11 @@ function verifyChoice(array){
     }
 }
 let destination = verifyChoice(destiantionList);
+let restaurant = verifyChoice(restaurantList);
+let transportation = verifyChoice(transportationList);
+let entertainment = verifyChoice(entertainmentList);
+
+function confirmTrip(){
+    
+}
 
