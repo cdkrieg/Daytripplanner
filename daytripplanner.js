@@ -2,6 +2,7 @@
 function welcomeMessage(){
     alert("Welcome to the random Day Trip Planner! \n Your destination, restaurant, mode of transportationn and entertainment will be randomly selected.");
 }
+let welcome = welcomeMessage();
 
 let destiantionList = ["Dallas", "Houston", "Austin", "San Antonio", "Fort Worth", "Waco", "El Paso"];
 let restaurantList = ["Olive Garden", "Saltgrass Steak House", "Five Guys Burgers", "Taco Bell", "Whataburger", "Braums"];
@@ -13,15 +14,15 @@ function randomGeneratorFromList(array){
     return result;
 }
 
-function verifyChoice(array){
+function verifyChoice(array, category){
 
     let choiceAccepted = false;
     while(choiceAccepted === false){
         let choice = randomGeneratorFromList(array);
 
-        let confirmation = confirm(`Your choice for ${category} is ${choice}! Do you accept this?`);
+        let confirmation = confirm(`Your choice of ${category} is ${choice}! Do you accept this?`);
         if(confirmation){
-            alert(`Congratulations! You have accepted the ${category} of ${choice}`);
+            alert(`Congratulations! You have accepted ${category}: ${choice}`);
             let categoryChoice = {};
             categoryChoice[category] = choice;
             
