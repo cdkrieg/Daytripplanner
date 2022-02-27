@@ -13,24 +13,34 @@ function randomGeneratorFromList(array){
     return result;
 }
 
-function verifyChoice(array){
+function verifyChoice(array, category){
 
     let choiceAccepted = false;
     while(choiceAccepted === false){
         let choice = randomGeneratorFromList(array);
-        let confirmation = confirm(`Your choice is ${choice}! Do you accept this?`);
+        let confirmation = confirm(`Your choice for ${category} is ${choice}! Do you accept this?`);
         if(confirmation){
-            alert(`Congratulations! You have accepted ${choice}`);
-            return choice;
+            alert(`Congratulations! You have accepted the ${category} of ${choice}`);
+            let categoryChoice = {};
+            categoryChoice[category] = choice;
+            
+            return categoryChoice;
         }
     }
 }
-let destination = verifyChoice(destiantionList);
-let restaurant = verifyChoice(restaurantList);
-let transportation = verifyChoice(transportationList);
-let entertainment = verifyChoice(entertainmentList);
 
-function confirmTrip(){
-    
+function tripConfirmation(destination, restaurant, transportation, entertainment){
+    alert(`Congratulations! Here are the details of your Day Trip: \n
+        ${Object.keys(destination)}: ${Object.values(destination)}\n
+        ${Object.keys(restaurant)}: ${Object.values(restaurant)}\n
+        ${Object.keys(transportation)}: ${Object.values(transportation)}\n
+        ${Object.keys(entertainment)}: ${Object.values(entertainment)}`);  
 }
+
+let destination = verifyChoice(destiantionList, "Destination");
+let restaurant = verifyChoice(restaurantList, "Restaurant");
+let transportation = verifyChoice(transportationList, "Transportation");
+let entertainment = verifyChoice(entertainmentList, "Entertainment");
+
+tripConfirmation(destination,restaurant, transportation, entertainment);
 
